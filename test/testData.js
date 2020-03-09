@@ -33,3 +33,16 @@ describe('Roman Numeral Conversion', function () {
     });
 });
 
+describe('Convert Date', function () {
+    it('1776/07/04 is not valid date', function () {
+        data.convertDate(new Date(1776, 07, 04)).should.equal(false);
+    });
+
+    it('The first date is a valid date', function () {
+        data.convertDate(new Date(1792, 9, 22)).should.equal("This is a possible date.");
+    });
+
+    it('Now is valid date', function () {
+        data.convertDate(new Date()).should.equal("This is a possible date.");
+    });
+});
