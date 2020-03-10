@@ -80,3 +80,17 @@ functions.convertToRoman = function (number) {
     }
     return romanNumeral;
 }
+
+functions.getStartDate = function (republicanYear) {
+    var year = republicanYear % 14;
+    if (year in [1, 2, 3, 5, 6, 7]) {
+        // 22 September
+        
+    } else if (year in [0, 4, 8, 9, 10, 11, 13]) {
+        // 23 September
+
+    } else if (year in 12) {
+        // 24 September
+
+    }
+}
