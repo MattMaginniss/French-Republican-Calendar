@@ -59,7 +59,7 @@ functions.getYear = function (gregorianYear) {
 functions.getMonthDayName = function (monthIndex, dayIndex) {
     var month = calInfo.monthInfo[monthIndex];
     var day = month.dayNames[dayIndex];
-    return month.name + " " + day.name;
+    return (dayIndex + 1) + ' ' + month.name;
 }
 
 /**
