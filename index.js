@@ -15,11 +15,17 @@ var calInfo = require('./data/info.js');
  * @return {string} The full french republican date.
  */
 functions.convertDate = function (date) {
-    if (isBefore(date, new Date(1792, 9, 22))) {
+    var republicanDays = dayDifference(date, endOfMonarchy);
+    if (republicanDays < 0) {
         return false;
     }
-    console.log(format(new Date(), "yyyy/MM/dd HH:mm:ss.SSS"))
-    return "This is a possible date.";
+
+    var republicanDays = dayDifference(date, endOfMonarchy);
+    var republicanMonths = Math.floor(republicanDays / 30);
+    var republicanYears = Math.floor(republicanMonths / 13);
+    var republicanDaysinMonth = republicanDays % 30;
+    
+    return this.getMonthDayName(republicanMonths, republicanDaysinMonth) + ", An " + this.convertToRoman(republicanYears + 1);
 }
 
 /**
