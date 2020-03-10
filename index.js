@@ -2,6 +2,8 @@
 var functions = module.exports;
 var format = require('date-fns/format');
 var isBefore = require('date-fns/isBefore'); 
+var dayDifference = require('date-fns/differenceInCalendarDays');
+const endOfMonarchy = new Date(1792, 9, 22);
 
 var calInfo = require('./data/info.js'); 
 
