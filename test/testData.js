@@ -4,12 +4,12 @@ var should = require('chai').should();
 var data = require('../index.js');
 
 describe('Data Checks', function () {
-    it('First month first day = Vendémiaire Raisin', function () {
-        data.getMonthDayName(0,0).should.equal('Vendémiaire Raisin');
+    it('First month first day = 1 Vendémiaire', function () {
+        data.getMonthDayName(0,0).should.equal('1 Vendémiaire');
     });
 
-    it('Last month last day = Fructidor Panier', function () {
-        data.getMonthDayName(11, 29).should.equal('Fructidor Panier');
+    it('Last month last day = 30 Fructidor', function () {
+        data.getMonthDayName(11, 29).should.equal('30 Fructidor');
     });
 });
 
@@ -38,11 +38,11 @@ describe('Convert Date', function () {
         data.convertDate(new Date(1776, 07, 04)).should.equal(false);
     });
 
-    it('The first date is a valid date', function () {
-        data.convertDate(new Date(1792, 9, 22)).should.equal("This is a possible date.");
+    it('The first date is Vendémiaire Raisin', function () {
+        data.convertDate(new Date(1792, 9, 22)).should.equal("1 Vendémiaire, An I");
     });
 
-    it('Now is valid date', function () {
-        data.convertDate(new Date()).should.equal("This is a possible date.");
+    it('9th day is Vendémiaire Panais', function () {
+        data.convertDate(new Date(1792, 9, 30)).should.equal("9 Vendémiaire, An I");
     });
 });
