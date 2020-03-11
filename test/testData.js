@@ -4,35 +4,20 @@ var should = require('chai').should();
 var data = require('../index.js');
 
 describe('Data Checks', function () {
-    it('First month first day = 1 Vendémiaire', function () {
-        data.getMonthName(0,0).should.equal('Vendémiaire');
+    it('First month = Vendémiaire', function () {
+        data.getMonthName(0, 0).should.equal('Vendémiaire');
     });
 
-    it('Last month last day = 30 Fructidor', function () {
+    it('Last month = Fructidor', function () {
         data.getMonthName(11, 29).should.equal('Fructidor');
     });
-});
 
-describe('Year Checks', function () {
-    it('First Republican Year', function () {
-        data.getRepublicanYear(new Date(1793,1,1)).should.equal(1);
-    });
-    it('Twelfth Republican Year', function () {
-        data.getRepublicanYear(new Date(1803,8, 24)).should.equal(12);
-    });
-});
-
-describe('Roman Numeral Conversion', function () {
-    it('1 = Roman Numeral: I', function () {
-        data.convertToRoman(1).should.equal('I');
+    it('First month first day = Raisin', function () {
+        data.getDayName(0, 0).should.equal('Raisin');
     });
 
-    it('469 = Roman Numeral: CDLXIX', function () {
-        data.convertToRoman(469).should.equal('CDLXIX');
-    });
-
-    it('999 = Roman Numeral: CMXCIX', function () {
-        data.convertToRoman(999).should.equal('CMXCIX');
+    it('Last month last day = Panier', function () {
+        data.getDayName(11, 29).should.equal('Panier');
     });
 });
 
@@ -59,3 +44,26 @@ describe('Start Date', function () {
     });
 
 })
+
+describe('Get Republican Year', function () {
+    it('First Republican Year', function () {
+        data.getRepublicanYear(new Date(1793,1,1)).should.equal(1);
+    });
+    it('Twelfth Republican Year', function () {
+        data.getRepublicanYear(new Date(1803,8, 24)).should.equal(12);
+    });
+});
+
+describe('Roman Numeral Conversion', function () {
+    it('1 = Roman Numeral: I', function () {
+        data.convertToRoman(1).should.equal('I');
+    });
+
+    it('469 = Roman Numeral: CDLXIX', function () {
+        data.convertToRoman(469).should.equal('CDLXIX');
+    });
+
+    it('999 = Roman Numeral: CMXCIX', function () {
+        data.convertToRoman(999).should.equal('CMXCIX');
+    });
+});
