@@ -90,7 +90,7 @@ functions.getStartDate = function (republicanYear) {
     } else if ([0, 4, 8, 9, 10, 11, 13].includes(year)) {
         // 23 September
         return (new Date((startYear + republicanYear), 8, 23).setUTCHours(0, 0, 0, 0));
-    } else if (12 === year) {
+    } else {
         // 24 September
         return (new Date((startYear + republicanYear), 8, 24).setUTCHours(0, 0, 0, 0));
     }

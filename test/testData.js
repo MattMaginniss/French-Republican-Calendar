@@ -42,6 +42,9 @@ describe('Start Date', function () {
     it('Twelfth Republican Year = 24 Sept 1803', function () {
         data.getStartDate(data.getRepublicanYear(new Date(1803, 8, 29))).should.equal(new Date(1803, 8, 24).setUTCHours(0, 0, 0, 0));
     });
+    it('Fourteenth Republican Year = 23 Sept 1805', function () {
+        data.getStartDate(data.getRepublicanYear(new Date(1805, 8, 25))).should.equal(new Date(1805, 8, 23).setUTCHours(0, 0, 0, 0));
+    });
 
 })
 
@@ -66,4 +69,10 @@ describe('Roman Numeral Conversion', function () {
     it('999 = Roman Numeral: CMXCIX', function () {
         data.convertToRoman(999).should.equal('CMXCIX');
     });
+
+    it('0 = Invalid Number', function () {
+        data.convertToRoman(0).should.equal('Invalid Number');
+    });
+
+
 });
