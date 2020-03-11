@@ -5,11 +5,11 @@ var data = require('../index.js');
 
 describe('Data Checks', function () {
     it('First month first day = 1 Vendémiaire', function () {
-        data.getMonthDayName(0,0).should.equal('1 Vendémiaire');
+        data.getMonthName(0,0).should.equal('Vendémiaire');
     });
 
     it('Last month last day = 30 Fructidor', function () {
-        data.getMonthDayName(11, 29).should.equal('30 Fructidor');
+        data.getMonthName(11, 29).should.equal('Fructidor');
     });
 });
 

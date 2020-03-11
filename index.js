@@ -26,7 +26,7 @@ functions.convertDate = function (date) {
     var republicanYears = Math.floor(republicanMonths / 12);
     var republicanDaysinMonth = republicanDays % 30;
     
-    return this.getMonthDayName(republicanMonths, republicanDaysinMonth) + ", An " + this.convertToRoman(republicanYears + 1);
+    return (republicanDaysinMonth + 1) + ' ' + this.getMonthName(republicanMonths) + ", An " + this.convertToRoman(republicanYears + 1);
 }
 
 /**
@@ -51,16 +51,26 @@ functions.getRepublicanYear = function (gregorianDate) {
 }
 
 /**
- * Gets the name of the month and the day within the Republican Calendar
+ * Gets the name of the month within the Republican Calendar
  * 
  * @param {number} monthIndex the republican month number-1.
- * @param {number} dayIndex the republican day number of the month-1.
+ * @return {string} The name of the month.
+ */
+functions.getMonthName = function (monthIndex) {
+    var month = calInfo.monthInfo[monthIndex];
+    return month.name;
+}
+
+/**
+ * Gets the name of the day within the Republican Calendar
+ * 
+ * @param {number} monthIndex the republican month number - 1.
+ * @param {number} dayIndex the republican day number of the month - 1.
  * @return {string} The name of the month and day concatenated.
  */
-functions.getMonthDayName = function (monthIndex, dayIndex) {
-    var month = calInfo.monthInfo[monthIndex];
+functions.getDayName = function (monthIndex, dayIndex) {
     var day = month.dayNames[dayIndex];
-    return (dayIndex + 1) + ' ' + month.name;
+    return day.name;
 }
 
 /**
