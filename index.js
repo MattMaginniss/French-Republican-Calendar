@@ -3,7 +3,7 @@ var functions = module.exports;
 var format = require('date-fns/format');
 var isBefore = require('date-fns/isBefore'); 
 var dayDifference = require('date-fns/differenceInCalendarDays');
-const endOfMonarchy = new Date(1792, 9, 22);
+const endOfMonarchy = new Date(1792, 8, 22); // 8 because it is a month index and not month number (September)
 
 var calInfo = require('./data/info.js'); 
 
@@ -22,7 +22,7 @@ functions.convertDate = function (date) {
 
     var republicanDays = dayDifference(date, endOfMonarchy);
     var republicanMonths = Math.floor(republicanDays / 30);
-    var republicanYears = Math.floor(republicanMonths / 13);
+    var republicanYears = Math.floor(republicanMonths / 12);
     var republicanDaysinMonth = republicanDays % 30;
     
     return this.getMonthDayName(republicanMonths, republicanDaysinMonth) + ", An " + this.convertToRoman(republicanYears + 1);
