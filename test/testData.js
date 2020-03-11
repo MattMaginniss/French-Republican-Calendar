@@ -15,7 +15,10 @@ describe('Data Checks', function () {
 
 describe('Year Checks', function () {
     it('First Republican Year', function () {
-        data.getYear(1792).should.equal("I");
+        data.getRepublicanYear(new Date(1793,1,1)).should.equal(1);
+    });
+    it('Twelfth Republican Year', function () {
+        data.getRepublicanYear(new Date(1803,8, 24)).should.equal(12);
     });
 });
 

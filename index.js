@@ -1,9 +1,10 @@
 'use strict';
 var functions = module.exports;
 var format = require('date-fns/format');
-var isBefore = require('date-fns/isBefore'); 
 var dayDifference = require('date-fns/differenceInCalendarDays');
+var differenceInYears = require('date-fns/differenceInYears');
 const endOfMonarchy = new Date(1792, 8, 22); // 8 because it is a month index and not month number (September)
+const startYear = 1791;
 
 var calInfo = require('./data/info.js'); 
 
@@ -41,12 +42,12 @@ functions.stringLocale = function (number, locale) {
 /**
  * Get the year number of the republican calendar.
  *
- * @param {number} gregorianYear The numerical gregorian year.
- * @return {string} The roman numeral representation of the gregorian year.
+ * @param {number} gregorianDate The gregorian date to determine what year the republican calendar is at.
+ * @return {number} The numerical representation of the gregorian year.
  */
-functions.getYear = function (gregorianYear) {
-    var republicanYear = gregorianYear - 1791;
-    return this.convertToRoman(republicanYear);
+functions.getRepublicanYear = function (gregorianDate) {
+    var republicanYear = differenceInYears(gregorianDate, endOfMonarchy);
+    return republicanYear + 1;
 }
 
 /**
