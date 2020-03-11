@@ -84,14 +84,14 @@ functions.convertToRoman = function (number) {
 
 functions.getStartDate = function (republicanYear) {
     var year = republicanYear % 14;
-    if (year in [1, 2, 3, 5, 6, 7]) {
+    if ([1, 2, 3, 5, 6, 7].includes(year)) {
         // 22 September
-        
-    } else if (year in [0, 4, 8, 9, 10, 11, 13]) {
+        return (new Date((startYear + republicanYear), 8, 22).setUTCHours(0, 0, 0, 0));
+    } else if ([0, 4, 8, 9, 10, 11, 13].includes(year)) {
         // 23 September
-
-    } else if (year in 12) {
+        return (new Date((startYear + republicanYear), 8, 23).setUTCHours(0, 0, 0, 0));
+    } else if (12 === year) {
         // 24 September
-
+        return (new Date((startYear + republicanYear), 8, 24).setUTCHours(0, 0, 0, 0));
     }
 }

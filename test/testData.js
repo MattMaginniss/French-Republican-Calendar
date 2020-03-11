@@ -42,10 +42,20 @@ describe('Convert Date', function () {
     });
 
     it('The first date is Vendémiaire Raisin', function () {
-        data.convertDate(new Date(1792, 9, 22)).should.equal("1 Vendémiaire, An I");
+        data.convertDate(new Date(1792, 8, 22)).should.equal("1 Vendémiaire, An I");
     });
 
     it('9th day is Vendémiaire Panais', function () {
-        data.convertDate(new Date(1792, 9, 30)).should.equal("9 Vendémiaire, An I");
+        data.convertDate(new Date(1792, 8, 30)).should.equal("9 Vendémiaire, An I");
     });
 });
+
+describe('Start Date', function () {
+    it('First Republican Year = 22 Sept 1792', function () {
+        data.getStartDate(data.getRepublicanYear(new Date(1793, 0, 1))).should.equal(new Date(1792, 8, 22).setUTCHours(0, 0, 0, 0));
+    });
+    it('Twelfth Republican Year = 24 Sept 1803', function () {
+        data.getStartDate(data.getRepublicanYear(new Date(1803, 8, 29))).should.equal(new Date(1803, 8, 24).setUTCHours(0, 0, 0, 0));
+    });
+
+})
