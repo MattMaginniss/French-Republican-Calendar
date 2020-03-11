@@ -16,17 +16,20 @@ var calInfo = require('./data/info.js');
  * @return {string} The full french republican date.
  */
 functions.convertDate = function (date) {
-    var republicanDays = dayDifference(date, endOfMonarchy);
+    var republicanYear = this.getRepublicanYear(date);
+    var gregorianStartDate = this.getStartDate(republicanYear);
+    var republicanDays = dayDifference(date, gregorianStartDate);
     if (republicanDays < 0) {
         return false;
     }
-
-    var republicanDays = dayDifference(date, endOfMonarchy);
-    var republicanMonths = Math.floor(republicanDays / 30);
-    var republicanYears = Math.floor(republicanMonths / 12);
-    var republicanDaysinMonth = republicanDays % 30;
+    if(republicanDays >= 360) {
+        return this.getDayName(12, (republicanDays-360)) + ", An " + this.convertToRoman(republicanYear);
+    } else {
+        var republicanMonths = Math.floor(republicanDays / 30);
+        var republicanDaysinMonth = republicanDays % 30;
+        return (republicanDaysinMonth) + ' ' + this.getMonthName(republicanMonths) + ", An " + this.convertToRoman(republicanYear);
+    }
     
-    return (republicanDaysinMonth + 1) + ' ' + this.getMonthName(republicanMonths) + ", An " + this.convertToRoman(republicanYears + 1);
 }
 
 /**
