@@ -33,6 +33,10 @@ describe('Convert Date', function () {
     it('9th day is Vendémiaire Panais', function () {
         data.convertDate(new Date(1792, 8, 30)).should.equal("9 Vendémiaire, An I");
     });
+
+    it('Last day of leap year is La Fête de la Révolution', function () {
+        data.convertDate(new Date(1793, 8, 21)).should.equal("La Fête de la Révolution, An I");
+    });
 });
 
 describe('Start Date', function () {
