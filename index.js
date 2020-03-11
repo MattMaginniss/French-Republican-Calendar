@@ -69,7 +69,7 @@ functions.getMonthName = function (monthIndex) {
  * @return {string} The name of the month and day concatenated.
  */
 functions.getDayName = function (monthIndex, dayIndex) {
-    var day = month.dayNames[dayIndex];
+    var day = calInfo.monthInfo[monthIndex].dayNames[dayIndex];
     return day.name;
 }
 
