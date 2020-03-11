@@ -30,16 +30,6 @@ functions.convertDate = function (date) {
 }
 
 /**
- * Format number to fit the format of a desired locale
- * @param {number} number the number to format
- * @param {string} locale the specified locale for formatting
- * @return {string} the formatted number
- */
-functions.stringLocale = function (number, locale) {
-    return number.toLocaleString(locale);
-};
-
-/**
  * Get the year number of the republican calendar.
  *
  * @param {number} gregorianDate The gregorian date to determine what year the republican calendar is at.
