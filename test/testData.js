@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var should = require('chai').should();
 
-var data = require('../index.js');
+var data = require('../src/index.js');
 
 describe('Data Checks', function () {
     it('First month = Vendémiaire', function () {
