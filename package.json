@@ -2,7 +2,7 @@
   "name": "republicancalendar",
   "version": "0.1.0",
   "description": "This library converts the current or a selected Gregorian calendar date to the date that would be stated within the French Republican Calendar.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
@@ -14,17 +14,21 @@
     "converter",
     "france",
     "revolution",
-    "revolutionary"
+    "revolutionary",
+    "date-time",
+    "date"
   ],
   "author": "Matthew Maginniss <matthew.maginniss@gmail.com>",
   "license": "WTFPL",
   "engines": {
     "node": ">=10.15.0"
   },
+  "dependencies": {
+    "date-fns": "^2.10.0"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "coveralls": "^3.0.9",
-    "date-fns": "^2.10.0",
     "istanbul": "^0.4.5",
     "mocha": "^7.1.0"
   }
