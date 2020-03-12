@@ -29,7 +29,6 @@ functions.convertDate = function (date) {
         var republicanDaysinMonth = republicanDays % 30;
         return (republicanDaysinMonth) + ' ' + this.getMonthName(republicanMonths) + ", An " + this.convertToRoman(republicanYear);
     }
-    
 }
 
 /**
@@ -49,7 +48,7 @@ functions.getRepublicanYear = function (gregorianDate) {
  * @param {number} monthIndex the republican month number-1.
  * @return {string} The name of the month.
  */
-functions.getMonthName = function (monthIndex) {
+this.getMonthName = function (monthIndex) {
     var month = calInfo.monthInfo[monthIndex];
     return month.name;
 }
@@ -85,7 +84,7 @@ functions.convertToRoman = function (number) {
     return romanNumeral;
 }
 
-functions.getStartDate = function (republicanYear) {
+this.getStartDate = function (republicanYear) {
     var year = republicanYear % 14;
     if ([1, 2, 3, 5, 6, 7].includes(year)) {
         // 22 September

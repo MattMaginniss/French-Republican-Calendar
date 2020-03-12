@@ -21,7 +21,7 @@
   "author": "Matthew Maginniss <matthew.maginniss@gmail.com>",
   "license": "WTFPL",
   "engines": {
-    "node": ">=10.15.0"
+    "node": ">=8.9.3"
   },
   "dependencies": {
     "date-fns": "^2.10.0"
