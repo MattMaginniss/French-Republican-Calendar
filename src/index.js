@@ -3,7 +3,7 @@ var functions = module.exports;
 var format = require('date-fns/format');
 var dayDifference = require('date-fns/differenceInCalendarDays');
 var differenceInYears = require('date-fns/differenceInYears');
-const endOfMonarchy = new Date(1792, 8, 22); // 8 because it is a month index and not month number (September)
+const endOfMonarchy = new Date(1792, 8/*Sept*/, 22);
 const startYear = 1791;
 
 var calInfo = require('./data/info.js'); 
