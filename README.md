@@ -4,10 +4,14 @@ This library converts the current or a selected Gregorian calendar date to the d
 
 ## Installation
 
-`npm install frenchrepublicancalendar`
+    $ npm install republicancal
 
 ## Usage
 
+
+
 ## Tests
 
-`npm test`
+`npm test` ## This will run the test for the package.
+
+`npm run cover` ## This will return information in the command line about the code coverage of tests.
