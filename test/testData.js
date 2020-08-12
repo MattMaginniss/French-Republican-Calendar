@@ -1,7 +1,8 @@
 var expect = require('chai').expect;
 var should = require('chai').should();
 
-var data = require('../src/index.js');
+var data = require('../src/index.js').cal;
+var time = require('../src/index.js').time;
 
 describe('Data Checks', function () {
     it('First month = Vendémiaire', function () {
@@ -77,6 +78,13 @@ describe('Roman Numeral Conversion', function () {
     it('0 = Invalid Number', function () {
         data.convertToRoman(0).should.equal('Invalid Number');
     });
+});
 
-
+describe("Decimal Time Conversion", function () {
+    it('Midnight = 00:00:00', function () {
+        time.convertTime(new Date(1, 1, 1, 0, 0, 0)).should.equal('Time: 0:0:0');
+    }); 
+    it('2:24:00 = 1:00:00', function () {
+        time.convertTime(new Date(1, 1, 1, 2, 24, 0)).should.equal('Time: 1:0:0');
+    });
 });
