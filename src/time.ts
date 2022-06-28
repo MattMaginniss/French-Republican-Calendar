@@ -2,6 +2,7 @@
 const secToRepSec = 1.157407407407407
 /**
  * Converts a Date object's time to a republican time string 
+ * @category Time
  *
  * @param date The date/time to convert to decimal time
  * @returns {string} The time converted from a Date object to decimal time
@@ -20,6 +21,7 @@ export function convertDateTime(date: Date): string {
 
 /**
  * Converts a set of hours, minutes and seconds to a republican time string
+ * @category Time
  * 
  * @param hours Number of hours to convert
  * @param minutes Number of minutes to convert

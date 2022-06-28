@@ -10,6 +10,7 @@ var calInfo = require('./data/info')
 /**
  * Converts the Gregorian date to the French Republican Calendar Date. 
  * The primary function of the library.
+ * @category Date
  *
  * @param {Date} date The gregorian date to convert from.
  * @return {string} The full french republican date.
@@ -32,17 +33,19 @@ export function convertDate(date: Date): string {
 
 /**
  * Get the year number of the republican calendar.
+ * @category Date
  *
- * @param {number} gregorianDate The gregorian date to determine what year the republican calendar is at.
+ * @param {Date} gregorianDate The gregorian date to determine what year the republican calendar is at.
  * @return {number} The numerical representation of the gregorian year.
  */
-export function getRepublicanYear(gregorianDate) {
+export function getRepublicanYear(gregorianDate: Date): number {
     var republicanYear = differenceInYears(gregorianDate, endOfMonarchy)
     return republicanYear + 1
 }
 
 /**
  * Gets the name of the month within the Republican Calendar
+ * @category Date
  * 
  * @param {number} monthIndex the republican month number-1.
  * @return {string} The name of the month.
@@ -54,6 +57,7 @@ export function getMonthName(monthIndex: number): string {
 
 /**
  * Gets the name of the day within the Republican Calendar
+ * @category Date
  * 
  * @param {number} monthIndex the republican month number - 1.
  * @param {number} dayIndex the republican day number of the month - 1.
@@ -67,6 +71,7 @@ export function getDayName(monthIndex: number, dayIndex: number): string {
 /**
  * Converts number 1-3999 (inclusive) to a Roman Numeral for representing
  * the French Republican Calendar year.
+ * @category Date
  *
  * @param {number} number The number to convert to roman numeral 
  * @return {string} The name of the month and day concatenated.
@@ -85,6 +90,8 @@ export function convertToRoman(number: number): string {
 
 /**
  * Gets the gregorian start date based on what Republican year it is
+ * @category Date
+ *
  * @param {number} republicanYear the year of the republic to check for the start date of.
  * @returns {Date} Gregorian date to start the republican year. UTC+2 (France/CEST)
  */
