@@ -1,7 +1,18 @@
 {
     "opts": {
         "template": "node_modules/better-docs",
-        "destination": "./docs/"
+        "destination": "./docs/",
+        "readme": "./README.md"
+    },
+    "templates": {
+        "better-docs": {
+            "name": "Republican Calendar",
+            "navigation": [{
+                "label": "Github",
+                "href": "https://github.com/MatthewMaginniss/French-Republican-Calendar"
+            }]
+        },
+        "search": true
     },
     "tags": {
         "allowUnknownTags": ["category"]
