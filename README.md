@@ -4,7 +4,7 @@ This library converts the current or a selected Gregorian calendar date to the d
 
 ## Installation
 
-    $ npm install republicancal
+    $ npm install republicancalendar
 
 ## Usage
 
