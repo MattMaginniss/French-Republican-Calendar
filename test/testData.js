@@ -97,6 +97,9 @@ describe("Decimal Time Conversion from Pieces", function () {
     it('2:24:00 = 1:00:00', function () {
         time.convertTime(2, 24, 0).should.equal('1:0:0')
     })
+    it('1 second before midnight = 23:59:59', function () {
+        time.convertTime(23, 59, 59).should.equal('9:99:99')
+    }) 
     it('Too many hours = Error', function () {
         expect(function () { time.convertTime(25, 0, 0) }).to.throw(Error)
     }) 
