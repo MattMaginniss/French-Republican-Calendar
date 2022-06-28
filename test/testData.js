@@ -83,10 +83,10 @@ describe('Roman Numeral Conversion', function () {
 
 describe("Decimal Time Conversion", function () {
     it('Midnight = 00:00:00', function () {
-        time.convertTime(new Date(1, 1, 1, 0, 0, 0)).should.equal('Time: 0:0:0')
+        time.convertTime(new Date(1, 1, 1, 0, 0, 0)).should.equal('0:0:0')
     }) 
     it('2:24:00 = 1:00:00', function () {
-        time.convertTime(new Date(1, 1, 1, 2, 24, 0)).should.equal('Time: 1:0:0')
+        time.convertTime(new Date(1, 1, 1, 2, 24, 0)).should.equal('1:0:0')
     })
     console.log(time.convertTime(new Date()))
 })
