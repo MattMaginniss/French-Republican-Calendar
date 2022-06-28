@@ -83,10 +83,36 @@ describe('Roman Numeral Conversion', function () {
 
 describe("Decimal Time Conversion", function () {
     it('Midnight = 00:00:00', function () {
-        time.convertTime(new Date(1, 1, 1, 0, 0, 0)).should.equal('0:0:0')
+        time.convertDateTime(new Date(1, 1, 1, 0, 0, 0)).should.equal('0:0:0')
     }) 
     it('2:24:00 = 1:00:00', function () {
-        time.convertTime(new Date(1, 1, 1, 2, 24, 0)).should.equal('1:0:0')
+        time.convertDateTime(new Date(1, 1, 1, 2, 24, 0)).should.equal('1:0:0')
     })
-    console.log(time.convertTime(new Date()))
+})
+
+describe("Decimal Time Conversion from Pieces", function () {
+    it('Midnight = 00:00:00', function () {
+        time.convertTime(0, 0, 0).should.equal('0:0:0')
+    }) 
+    it('2:24:00 = 1:00:00', function () {
+        time.convertTime(2, 24, 0).should.equal('1:0:0')
+    })
+    it('Too many hours = Error', function () {
+        expect(function () { time.convertTime(25, 0, 0) }).to.throw(Error)
+    }) 
+    it('Too few hours = Error', function () {
+        expect(function () { time.convertTime(-1, 0, 0) }).to.throw(Error)
+    }) 
+    it('Too many minutes = Error', function () {
+        expect(function () { time.convertTime(0, 60, 0) }).to.throw(Error)
+    }) 
+    it('Too few minutes = Error', function () {
+        expect(function () { time.convertTime(0, -1, 0) }).to.throw(Error)
+    }) 
+    it('Too many seconds = Error', function () {
+        expect(function () { time.convertTime(0, 0, 60) }).to.throw(Error)
+    }) 
+    it('Too few seconds = Error', function () {
+        expect(function () { time.convertTime(0, 0, -1) }).to.throw(Error)
+    }) 
 })
