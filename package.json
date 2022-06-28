@@ -4,9 +4,11 @@
   "description": "This library converts the current or a selected Gregorian calendar date to the date that would be stated within the French Republican Calendar.",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
+  "files": ["dist/*.js", "dist/**/*.js"],
   "keywords": [
     "French",
     "republican",
