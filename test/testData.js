@@ -1,7 +1,7 @@
 var expect = require('chai').expect
 var should = require('chai').should()
 
-var date = require('../dist/index.js').cal
+var date = require('../dist/index.js').calendar
 var time = require('../dist/index.js').time
 
 describe('Data Checks', function () {
