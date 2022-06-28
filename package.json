@@ -1,6 +1,6 @@
 {
   "name": "republicancalendar",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "This library converts the current or a selected Gregorian calendar date to the date that would be stated within the French Republican Calendar.",
   "main": "dist/index.js",
   "scripts": {
