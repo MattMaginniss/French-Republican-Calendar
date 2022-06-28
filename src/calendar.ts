@@ -5,7 +5,7 @@ var differenceInYears = require('date-fns/differenceInYears')
 const endOfMonarchy = new Date(1792, 8/*Sept*/, 22)
 const startYear = 1791
 
-var calInfo = require('./data/info.js') 
+var calInfo = require('./data/info') 
 
 /**
  * Converts the Gregorian date to the French Republican Calendar Date. 
