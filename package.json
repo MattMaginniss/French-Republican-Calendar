@@ -6,9 +6,13 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha --reporter spec",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "docs": "jsdoc -c jsdoc.json"
   },
-  "files": ["dist/*.js", "dist/**/*.js"],
+  "files": [
+    "dist/*.js",
+    "dist/**/*.js"
+  ],
   "keywords": [
     "French",
     "republican",
@@ -30,6 +34,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
+    "better-docs": "^2.7.2",
     "chai": "^4.2.0",
     "coveralls": "^3.0.9",
     "istanbul": "^0.4.5",
