@@ -1,18 +1,20 @@
 {
     "opts": {
-        "template": "node_modules/better-docs",
-        "destination": "./docs/",
-        "readme": "./README.md"
+        "template": "./node_modules/tidy-jsdoc",
+        "prism-theme": "prism-custom",
+        "encoding": "utf8",
+        "destination": "./docs/docs/",
+        "readme": "./README.md",
+        "theme_opts": {
+            "default_theme": "dark"
+        }
     },
-    "templates": {
-        "better-docs": {
-            "name": "Republican Calendar",
-            "navigation": [{
-                "label": "Github",
-                "href": "https://github.com/MatthewMaginniss/French-Republican-Calendar"
-            }]
-        },
-        "search": true
+    "metadata": {
+        "title": "French Republican Calendar"
+    },
+    "styles": {
+        "text-color": "#111",	
+        "heading-color": "var(--primary-color)"
     },
     "tags": {
         "allowUnknownTags": ["category"]

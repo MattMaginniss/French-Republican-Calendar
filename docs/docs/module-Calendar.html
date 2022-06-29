@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>French Republican Calendar: Calendar</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-custom.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+    
+    <style>
+      :root {
+      
+      
+        --text-color: #111;
+      
+      
+        --heading-color: var(--primary-color);
+      
+      }
+    </style>
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      French Republican Calendar
+    </a>
+  </h1>
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module"><a href="module-Calendar.html">Calendar</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Calendar.html#.convertDate">convertDate</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Calendar.html#.convertToRoman">convertToRoman</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Calendar.html#.getDayName">getDayName</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Calendar.html#.getMonthName">getMonthName</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Calendar.html#.getRepublicanYear">getRepublicanYear</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Calendar.html#.getStartDate">getStartDate</a></span></li><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module"><a href="module-Time.html">Time</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Time.html#.convertDateTime">convertDateTime</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="module-Time.html#.convertTime">convertTime</a></span></li></ul>
+  </nav>
+</header>
+
+
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind">Module</p>
+    <h1 class="page-title">Calendar</h1>
+    
+
+
+
+
+<section>
+
+
+<header class="not-class">
+
+
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+
+
+
+    
+        
+            <div class="description">All functions related to the calendar and calendar conversions</div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="calendar.ts.html">calendar.ts</a><a href="calendar.ts.html#source.2">, line 2</a>
+        </li>
+    </ul>
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+     
+
+    
+
+    
+
+
+    
+
+    
+        <h3 class="subtitle">Methods</h3>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    <h4 class="method-name" id=".convertDate">convertDate<span class="signature">(date)</span><span class="return-type-signature"> &rarr; {string}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    Converts the Gregorian date to the French Republican Calendar Date.
+The primary function of the library.
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">date</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Date</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description">The gregorian date to convert from.</div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>string</code>
+            
+            
+                The full french republican date.
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="calendar.ts.html">calendar.ts</a><a href="calendar.ts.html#source.22">, line 22</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    <h4 class="method-name" id=".convertToRoman">convertToRoman<span class="signature">(number)</span><span class="return-type-signature"> &rarr; {string}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    Converts number 1-3999 (inclusive) to a Roman Numeral for representing
+the French Republican Calendar year.
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">number</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description">The year number to convert to roman numeral</div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>string</code>
+            
+            
+                The roman numeral representation of the year passed into the function.
+            
+        </li>
+    
+    </ul>
+
+
+
+
+    <h4 class="method-heading">Examples</h4>
+    
+    <pre><code class="language-js">var romanYear = convertToRoman(5); // romanYear is set to "V"</code></pre>
+
+    <pre><code class="language-js">var romanYear = convertToRoman(25); // romanYear is set to "XXV"</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="calendar.ts.html">calendar.ts</a><a href="calendar.ts.html#source.89">, line 89</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    <h4 class="method-name" id=".getDayName">getDayName<span class="signature">(monthIndex, dayIndex)</span><span class="return-type-signature"> &rarr; {string}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    Gets the name of the day within the Republican Calendar
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">monthIndex</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description">the republican month number - 1.</div>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">dayIndex</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description">the republican day number of the month - 1.</div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>string</code>
+            
+            
+                The name of the month and day concatenated.
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="calendar.ts.html">calendar.ts</a><a href="calendar.ts.html#source.71">, line 71</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    <h4 class="method-name" id=".getMonthName">getMonthName<span class="signature">(monthIndex)</span><span class="return-type-signature"> &rarr; {string}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    Gets the name of the month within the Republican Calendar
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">monthIndex</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description">the republican month number-1.</div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>string</code>
+            
+            
+                The name of the month.
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="calendar.ts.html">calendar.ts</a><a href="calendar.ts.html#source.58">, line 58</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    <h4 class="method-name" id=".getRepublicanYear">getRepublicanYear<span class="signature">(gregorianDate)</span><span class="return-type-signature"> &rarr; {number}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    Get the year number of the republican calendar.
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">gregorianDate</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Date</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description">The gregorian date to determine what year the republican calendar is at.</div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>number</code>
+            
+            
+                The numerical representation of the gregorian year.
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="calendar.ts.html">calendar.ts</a><a href="calendar.ts.html#source.46">, line 46</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    <h4 class="method-name" id=".getStartDate">getStartDate<span class="signature">(republicanYear)</span><span class="return-type-signature"> &rarr; {Date}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    Gets the gregorian start date based on what Republican year it is
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">republicanYear</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description">the year of the republic to check for the start date of.</div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Date</code>
+            
+            
+                Gregorian date to start the republican year. UTC+2 (France/CEST)
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="calendar.ts.html">calendar.ts</a><a href="calendar.ts.html#source.109">, line 109</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+  </div>
+</main>
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Tue Jun 28 2022 22:43:50 GMT-0400 (Eastern Daylight Time)
+  </div>
+</footer>
+
+
+
+<script src="scripts/prism.dev.js"></script>
+</body>
+</html>
