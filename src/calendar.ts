@@ -1,3 +1,7 @@
+/**
+ * All functions related to the calendar and calendar conversions
+ @module Calendar
+*/
 'use strict'
 var format = require('date-fns/format')
 var dayDifference = require('date-fns/differenceInCalendarDays')
@@ -10,6 +14,7 @@ var calInfo = require('./data/info')
 /**
  * Converts the Gregorian date to the French Republican Calendar Date. 
  * The primary function of the library.
+ * @function
  * @category Date
  *
  * @param {Date} date The gregorian date to convert from.
@@ -32,7 +37,8 @@ export function convertDate(date: Date): string {
 }
 
 /**
- * Get the year number of the republican calendar.
+ * Get the year number of the republican calendar. 
+ * @function
  * @category Date
  *
  * @param {Date} gregorianDate The gregorian date to determine what year the republican calendar is at.
@@ -44,7 +50,8 @@ export function getRepublicanYear(gregorianDate: Date): number {
 }
 
 /**
- * Gets the name of the month within the Republican Calendar
+ * Gets the name of the month within the Republican Calendar 
+ * @function
  * @category Date
  * 
  * @param {number} monthIndex the republican month number-1.
@@ -56,7 +63,8 @@ export function getMonthName(monthIndex: number): string {
 }
 
 /**
- * Gets the name of the day within the Republican Calendar
+ * Gets the name of the day within the Republican Calendar 
+ * @function
  * @category Date
  * 
  * @param {number} monthIndex the republican month number - 1.
@@ -70,11 +78,17 @@ export function getDayName(monthIndex: number, dayIndex: number): string {
 
 /**
  * Converts number 1-3999 (inclusive) to a Roman Numeral for representing
- * the French Republican Calendar year.
+ * the French Republican Calendar year. 
+ * @function
  * @category Date
  *
- * @param {number} number The number to convert to roman numeral 
- * @return {string} The name of the month and day concatenated.
+ * @param {number} number The year number to convert to roman numeral 
+ * @return {string} The roman numeral representation of the year passed into the function.
+ * @example 
+ * var romanYear = convertToRoman(5); // romanYear is set to "V"
+
+ * @example 
+ * var romanYear = convertToRoman(25); // romanYear is set to "XXV"
  */
 export function convertToRoman(number: number): string {
     if (number <= 0 || number >= 4000) return "Invalid Number"
@@ -89,8 +103,9 @@ export function convertToRoman(number: number): string {
 }
 
 /**
- * Gets the gregorian start date based on what Republican year it is
- * @category Date
+ * Gets the gregorian start date based on what Republican year it is 
+ * @function
+ * @category Date The date to check what the year it is in starts on.
  *
  * @param {number} republicanYear the year of the republic to check for the start date of.
  * @returns {Date} Gregorian date to start the republican year. UTC+2 (France/CEST)

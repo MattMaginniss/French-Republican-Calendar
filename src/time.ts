@@ -1,3 +1,7 @@
+/**
+ @module Time
+*/
+
 'use strict'
 const secToRepSec = 1.157407407407407
 /**
