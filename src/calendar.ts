@@ -3,7 +3,6 @@
  @module Calendar
 */
 'use strict'
-var format = require('date-fns/format')
 var dayDifference = require('date-fns/differenceInCalendarDays')
 var differenceInYears = require('date-fns/differenceInYears')
 const endOfMonarchy = new Date(1792, 8/*Sept*/, 22)

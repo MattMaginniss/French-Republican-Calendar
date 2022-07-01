@@ -100,6 +100,12 @@ describe("Decimal Time Conversion from Pieces", function () {
     it('1 second before midnight = 23:59:59', function () {
         time.convertTime(23, 59, 59).should.equal('9:99:99')
     }) 
+    it('18:47:34 = 7:83:3', function () {
+        time.convertTime(18, 47, 34).should.equal('7:83:3')
+    }) 
+    it('18:53:09 = 7:86:91', function () {
+        time.convertTime(18, 53, 09).should.equal('7:86:91')
+    }) 
     it('Too many hours = Error', function () {
         expect(function () { time.convertTime(25, 0, 0) }).to.throw(Error)
     }) 
