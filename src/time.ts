@@ -14,15 +14,12 @@ var timezoneDate = require('date-fns-tz/formatInTimeZone')
  * @returns {string} The time converted from a Date object to decimal time
  */
 export function convertDateTime(date: Date): string {
-    let decMins = (date.getHours() * 60) + date.getMinutes()
-    let decSec = (decMins * 60) + date.getSeconds()
-    let frcSec = Math.round(decSec * secToRepSec)
-
-    let frcHours = Math.floor(frcSec / 10000)
-    frcSec = frcSec % 10000
-    let frcMins = Math.floor(frcSec / 100)
-    frcSec = frcSec % 100
-    return (`${frcHours}:${frcMins}:${frcSec}`)
+    let decMs = (date.getHours() * 3600000) + (date.getMinutes() * 60000) + (date.getSeconds() * 1000) + date.getMilliseconds()
+    let repMs = Math.round(decMs * secToRepSec)
+    let repSec = Math.floor(repMs / 1000) % 100
+    let repMin = Math.floor(repMs / 100000 % 100)
+    let repHour = Math.floor(repMs / 10000000)
+    return (`${repHour}:${repMin}:${repSec}`)
 }
 
 /**
@@ -34,13 +31,18 @@ export function convertDateTime(date: Date): string {
  * @param seconds Number of seconds to convert
  * @returns {string} The time converted from a Date object to decimal time
  */
-export function convertTime(hours: number, minutes: number, seconds: number): string {
-    if (!(hours >= 0 && hours < 24) || !(minutes >= 0 && minutes < 60) || !(seconds >= 0 && seconds < 60)) {
-        throw new Error("Invalid time parameters. Hours must be less than 24 and Minutes/Seconds must be less than 60")
+export function convertTime(hours: number, minutes: number, seconds: number, ms: number): string {
+    if (!(hours >= 0 && hours < 24) || !(minutes >= 0 && minutes < 60) || !(seconds >= 0 && seconds < 60) || !(ms >= 0 && ms < 1000)) {
+        throw new Error("Invalid time parameters. Hours must be less than 24, Minutes/Seconds must be less than 60, Milliseconds must be less than 1000")
     }
-    var decMins = (hours * 60) + minutes
-    var decSec = (decMins * 60) + seconds
-    var frcSec = Math.round(decSec * secToRepSec)
+    let decMs = (hours * 3600000) + (minutes * 60000) + (seconds * 1000) + ms
+    let repMs = Math.round(decMs * secToRepSec)
+    let repSec = Math.floor(repMs / 1000) % 100
+    let repMin = Math.floor(repMs / 100000) % 100
+    let repHour = Math.floor(repMs / 10000000)
+    return (`${repHour}:${repMin}:${repSec}`)
+}
+
 
     var frcHours = Math.floor(frcSec / 10000)
     frcSec = frcSec % 10000
