@@ -6,39 +6,38 @@ var time = require('../dist/index.js').time
 
 describe('Data Checks', function () {
     it('First month = Vendémiaire', function () {
-        date.getMonthName(0, 0).should.equal('Vendémiaire')
+        'Vendémiaire'.should.equal(date.getMonthName(0, 0))
     })
 
     it('Last month = Fructidor', function () {
-        date.getMonthName(11, 29).should.equal('Fructidor')
+        'Fructidor'.should.equal(date.getMonthName(11, 29))
     })
 
     it('First month first day = Raisin', function () {
-        date.getDayName(0, 0).should.equal('Raisin')
+        'Raisin'.should.equal(date.getDayName(0, 0))
     })
 
     it('Last month last day = Panier', function () {
-        date.getDayName(11, 29).should.equal('Panier')
+        'Panier'.should.equal(date.getDayName(11, 29))
     })
 })
 
 describe('Convert Date', function () {
     it('1776/07/04 is not valid date', function () {
-        date.convertDate(new Date(1776, 7, 4)).should.equal("Before the revolution")
+        "Before the revolution".should.equal(date.convertDate(new Date(1776, 7, 4)))
     })
 
     it('The first date is Vendémiaire Raisin', function () {
-        date.convertDate(new Date(1792, 8, 22)).should.equal("1 Vendémiaire, An I")
+        "1 Vendémiaire, An I".should.equal(date.convertDate(new Date(1792, 8, 22)))
     })
 
     it('9th day is Vendémiaire Panais', function () {
-        date.convertDate(new Date(1792, 8, 30)).should.equal("9 Vendémiaire, An I")
+        "9 Vendémiaire, An I".should.equal(date.convertDate(new Date(1792, 8, 30)))
     })
 
     it('Last day of leap year is La Fête de la Révolution', function () {
-        date.convertDate(new Date(1793, 8, 21)).should.equal("La Fête de la Révolution, An I")
+        "La Fête de la Révolution, An I".should.equal(date.convertDate(new Date(1793, 8, 21)))
     })
-    console.log(date.convertDate(new Date()))
 })
 
 describe('Start Date', function () {
@@ -56,56 +55,53 @@ describe('Start Date', function () {
 
 describe('Get Republican Year', function () {
     it('First Republican Year', function () {
-        date.getRepublicanYear(new Date(1793,1,1)).should.equal(1)
+        (1).should.equal(date.getRepublicanYear(new Date(1793,1,1)))
     })
     it('Twelfth Republican Year', function () {
-        date.getRepublicanYear(new Date(1803,8, 24)).should.equal(12)
+        (12).should.equal(date.getRepublicanYear(new Date(1803,8, 24)))
     })
 })
 
 describe('Roman Numeral Conversion', function () {
     it('1 = Roman Numeral: I', function () {
-        date.convertToRoman(1).should.equal('I')
+        'I'.should.equal(date.convertToRoman(1))
     })
 
     it('469 = Roman Numeral: CDLXIX', function () {
-        date.convertToRoman(469).should.equal('CDLXIX')
+        'CDLXIX'.should.equal(date.convertToRoman(469))
     })
 
     it('999 = Roman Numeral: CMXCIX', function () {
-        date.convertToRoman(999).should.equal('CMXCIX')
+        'CMXCIX'.should.equal(date.convertToRoman(999))
     })
 
     it('0 = Invalid Number', function () {
-        date.convertToRoman(0).should.equal('Invalid Number')
+        'Invalid Number'.should.equal(date.convertToRoman(0))
     })
 })
 
 describe("Decimal Time Conversion", function () {
     it('Midnight = 00:00:00', function () {
-        time.convertDateTime(new Date(1, 1, 1, 0, 0, 0)).should.equal('0:0:0')
+        '0:0:0'.should.equal(time.convertDateTime(new Date(1, 1, 1, 0, 0, 0)))
     }) 
     it('2:24:00 = 1:00:00', function () {
-        time.convertDateTime(new Date(1, 1, 1, 2, 24, 0)).should.equal('1:0:0')
+        '1:0:0'.should.equal(time.convertDateTime(new Date(1, 1, 1, 2, 24, 0, 0)))
     })
 })
 
 describe("Decimal Time Conversion from Pieces", function () {
     it('Midnight = 00:00:00', function () {
-        time.convertTime(0, 0, 0).should.equal('0:0:0')
+        '0:0:0'.should.equal(time.convertTime(0, 0, 0, 0))
     }) 
     it('2:24:00 = 1:00:00', function () {
-        time.convertTime(2, 24, 0).should.equal('1:0:0')
+        '1:0:0'.should.equal(time.convertTime(2, 24, 0, 0))
     })
-    it('1 second before midnight = 23:59:59', function () {
-        time.convertTime(23, 59, 59).should.equal('9:99:99')
-    }) 
-    it('18:47:34 = 7:83:3', function () {
-        time.convertTime(18, 47, 34).should.equal('7:83:3')
-    }) 
-    it('18:53:09 = 7:86:91', function () {
-        time.convertTime(18, 53, 09).should.equal('7:86:91')
-    }) 
+    it('Noon = 5:00:00', function () {
+        '5:0:0'.should.equal(time.convertTime(12, 0, 0, 0))
+    })
+    it('1 millisecond before midnight = 23:59:59.999', function () {
+        time.convertTime(23, 59, 59, 999).should.equal('9:99:99')
+    })
     it('Too many hours = Error', function () {
         expect(function () { time.convertTime(25, 0, 0) }).to.throw(Error)
     }) 
