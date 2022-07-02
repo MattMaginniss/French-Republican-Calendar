@@ -4,6 +4,8 @@
 
 'use strict'
 const secToRepSec = 1.157407407407407
+var timezoneDate = require('date-fns-tz/formatInTimeZone')
+
 /**
  * Converts a Date object's time to a republican time string 
  * @category Time
