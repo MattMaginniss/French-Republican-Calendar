@@ -51,25 +51,19 @@ export function convertTime(hours: number, minutes: number, seconds: number, ms:
  * @function
  *
  * @param timezone IANA time zone name or offset string (ex. America/Los_Angeles, Europe/Berlin, Etc/GMT+2)
+ *                  If nothing is provided. The timezone of the user will be used.
  * @returns Converted time from current time in the specified timezone to Republican Time
  */
-export function getCurrentRepublicanTimeTimezone(timezone: string) {
-    let date = timezoneDate(new Date(), timezone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
-    console.log(date)
-    let time = date.split('T')[1]
-    return convertTime(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), parseInt(time.split(':')[2].split('.')[0]), parseInt(time.split(':')[2].split('.')[1]))
-}
-
-/**
- * Gets the current republican time based on the users timezone
- * @category Time
- * @function
- *
- * @returns Converted time from current time in the users timezone to Republican Time
- */
-export function getCurrentLocalRepublicanTime() {
-    let date = timezoneDate(new Date(), Intl.DateTimeFormat().resolvedOptions().timeZone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
-    console.log(date)
+export function getCurrentRepublicanTimeTimezone(timezone?: string) {
+    if (timezone === undefined) {
+        timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    }
+    let date = ''
+    try {
+        date = timezoneDate(new Date(), timezone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
+    } catch (error) {
+        return "Invaild Timezone, please either use an IANA time zone name or offset string"
+    }
     let time = date.split('T')[1]
     return convertTime(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), parseInt(time.split(':')[2].split('.')[0]), parseInt(time.split(':')[2].split('.')[1]))
 }
