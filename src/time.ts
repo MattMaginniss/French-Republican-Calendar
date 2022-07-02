@@ -43,10 +43,13 @@ export function convertTime(hours: number, minutes: number, seconds: number, ms:
     return (`${repHour}:${repMin}:${repSec}`)
 }
 
+export function getCurrentRepublicanTime() {
+    let date = new Date()
+    return convertDateTime(date)
+}
 
-    var frcHours = Math.floor(frcSec / 10000)
-    frcSec = frcSec % 10000
-    var frcMins = Math.floor(frcSec / 100)
-    frcSec = frcSec % 100
-    return (`${frcHours}:${frcMins}:${frcSec}`)
+export function getCurrentRepublicanTimeFrance() {
+    let dateFrance = timezoneDate(new Date(), "Europe/Paris", 'yyyy-MM-dd HH:mm:ss.SSS XXX')
+    let timeFrance = dateFrance.split(' ')[1]
+    return convertTime(parseInt(timeFrance.split(':')[0]), parseInt(timeFrance.split(':')[1]), parseInt(timeFrance.split(':')[2].split('.')[0]), parseInt(timeFrance.split(':')[2].split('.')[1]))
 }
