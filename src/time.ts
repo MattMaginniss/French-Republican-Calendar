@@ -54,7 +54,7 @@ export function convertTime(hours: number, minutes: number, seconds: number, ms:
  *                  If nothing is provided. The timezone of the user will be used.
  * @returns Converted time from current time in the specified timezone to Republican Time
  */
-export function getCurrentRepublicanTimeTimezone(timezone?: string) {
+export function getCurrentRepublicanTime(timezone?: string) {
     if (timezone === undefined) {
         timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
     }
