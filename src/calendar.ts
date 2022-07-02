@@ -125,26 +125,24 @@ export function getStartDate(republicanYear: number): Date {
 }
 
 /**
- * Gets the calculated republican date converted from the current date in a timezone.
+ * Gets the calculated republican date converted from the current date in a specific timezone.
  * @function
  * @category Date
  *
  * @param timezone IANA time zone name or offset string (ex. America/Los_Angeles, Europe/Berlin, Etc/GMT+2)
+ *                  If nothing is provided. The timezone of the user will be used.
  * @returns Returns the republican date based on date in a timezone
  */
-export function getCurrentRepublicanDate(timezone: string) {
-    let date = timezoneDate(new Date(), timezone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
-    return convertDate(new Date(date.split('T')[0]))
-}
-
-/**
- * Gets the calculated republican date based on the users local date/time.
- * @function
- * @category Date
- *
- * @returns Returns the republican date based on the users local date/time
- */
-export function getCurrentLocalRepublicanDate() { //TODO Fix this because its not working properly
-    let date = timezoneDate(new Date(), Intl.DateTimeFormat().resolvedOptions().timeZone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
+export function getCurrentRepublicanDate(timezone?: string): string {
+    if (timezone === undefined) {
+        timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    }
+    console.log(timezone)
+    let date = ''
+    try {
+        date = timezoneDate(new Date(), timezone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
+    } catch (error) {
+        return "Invaild Timezone, please either use an IANA time zone name or offset string"
+    }
     return convertDate(new Date(date.split('T')[0]))
 }
