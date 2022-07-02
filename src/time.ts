@@ -9,6 +9,7 @@ var timezoneDate = require('date-fns-tz/formatInTimeZone')
 /**
  * Converts a Date object's time to a republican time string 
  * @category Time
+ * @function
  *
  * @param date The date/time to convert to decimal time
  * @returns {string} The time converted from a Date object to decimal time
@@ -25,6 +26,7 @@ export function convertDateTime(date: Date): string {
 /**
  * Converts a set of hours, minutes and seconds to a republican time string
  * @category Time
+ * @function
  * 
  * @param hours Number of hours to convert
  * @param minutes Number of minutes to convert
@@ -46,6 +48,7 @@ export function convertTime(hours: number, minutes: number, seconds: number, ms:
 /**
  * Gets the current republican time based on the input timezone
  * @category Time
+ * @function
  *
  * @param timezone IANA time zone name or offset string (ex. America/Los_Angeles, Europe/Berlin, Etc/GMT+2)
  * @returns Converted time from current time in the specified timezone to Republican Time
@@ -60,6 +63,7 @@ export function getCurrentRepublicanTimeTimezone(timezone: string) {
 /**
  * Gets the current republican time based on the users timezone
  * @category Time
+ * @function
  *
  * @returns Converted time from current time in the users timezone to Republican Time
  */
