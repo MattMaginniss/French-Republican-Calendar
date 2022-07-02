@@ -5,11 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "build-browser": "tsc && browserify dist/index.js -s french-republican-calendar | terser --compress --mangle > browser/french-republican-calendar.js",
+    "build-browser": "tsc && browserify dist/index.js -s frc | terser --compress --mangle > browser/french-republican-calendar.js",
     "test": "tsc && mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "docs": "jsdoc -c jsdoc.json",
-    "clock": "tsc && node ./dist/index.js"
+    "docs": "jsdoc -c jsdoc.json"
   },
   "files": [
     "dist/*.js",

@@ -43,13 +43,29 @@ export function convertTime(hours: number, minutes: number, seconds: number, ms:
     return (`${repHour}:${repMin}:${repSec}`)
 }
 
-export function getCurrentRepublicanTime() {
-    let date = new Date()
-    return convertDateTime(date)
+/**
+ * Gets the current republican time based on the input timezone
+ * @category Time
+ *
+ * @param timezone IANA time zone name or offset string (ex. America/Los_Angeles, Europe/Berlin, Etc/GMT+2)
+ * @returns Converted time from current time in the specified timezone to Republican Time
+ */
+export function getCurrentRepublicanTimeTimezone(timezone: string) {
+    let date = timezoneDate(new Date(), timezone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
+    console.log(date)
+    let time = date.split('T')[1]
+    return convertTime(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), parseInt(time.split(':')[2].split('.')[0]), parseInt(time.split(':')[2].split('.')[1]))
 }
 
-export function getCurrentRepublicanTimeFrance() {
-    let dateFrance = timezoneDate(new Date(), "Europe/Paris", 'yyyy-MM-dd HH:mm:ss.SSS XXX')
-    let timeFrance = dateFrance.split(' ')[1]
-    return convertTime(parseInt(timeFrance.split(':')[0]), parseInt(timeFrance.split(':')[1]), parseInt(timeFrance.split(':')[2].split('.')[0]), parseInt(timeFrance.split(':')[2].split('.')[1]))
+/**
+ * Gets the current republican time based on the users timezone
+ * @category Time
+ *
+ * @returns Converted time from current time in the users timezone to Republican Time
+ */
+export function getCurrentLocalRepublicanTime() {
+    let date = timezoneDate(new Date(), Intl.DateTimeFormat().resolvedOptions().timeZone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
+    console.log(date)
+    let time = date.split('T')[1]
+    return convertTime(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), parseInt(time.split(':')[2].split('.')[0]), parseInt(time.split(':')[2].split('.')[1]))
 }
