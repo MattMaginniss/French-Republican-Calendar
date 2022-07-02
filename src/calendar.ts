@@ -5,6 +5,7 @@
 'use strict'
 var dayDifference = require('date-fns/differenceInCalendarDays')
 var differenceInYears = require('date-fns/differenceInYears')
+var timezoneDate = require('date-fns-tz/formatInTimeZone')
 const endOfMonarchy = new Date(1792, 8/*Sept*/, 22)
 const startYear = 1791
 
@@ -121,4 +122,29 @@ export function getStartDate(republicanYear: number): Date {
         // 24 September
         return (new Date(`${startYear + republicanYear}-09-24T00:00:00.000+02:00`))
     }
+}
+
+/**
+ * Gets the calculated republican date converted from the current date in a timezone.
+ * @function
+ * @category Date
+ *
+ * @param timezone IANA time zone name or offset string (ex. America/Los_Angeles, Europe/Berlin, Etc/GMT+2)
+ * @returns Returns the republican date based on date in a timezone
+ */
+export function getCurrentRepublicanDate(timezone: string) {
+    let date = timezoneDate(new Date(), timezone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
+    return convertDate(new Date(date.split('T')[0]))
+}
+
+/**
+ * Gets the calculated republican date based on the users local date/time.
+ * @function
+ * @category Date
+ *
+ * @returns Returns the republican date based on the users local date/time
+ */
+export function getCurrentLocalRepublicanDate() { //TODO Fix this because its not working properly
+    let date = timezoneDate(new Date(), Intl.DateTimeFormat().resolvedOptions().timeZone, "yyyy-MM-dd'\T'HH:mm:ss.SSSXXX")
+    return convertDate(new Date(date.split('T')[0]))
 }
